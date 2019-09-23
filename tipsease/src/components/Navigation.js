@@ -21,23 +21,11 @@ export default class Navigation extends React.Component {
     return (
       <div>
         <Nav tabs>
-          <Dropdown nav isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-            <DropdownToggle nav caret>
-              Dropdown
-            </DropdownToggle>
-            <DropdownMenu>
-              <DropdownItem header>Header</DropdownItem>
-              <DropdownItem disabled>Action</DropdownItem>
-              <DropdownItem>Another Action</DropdownItem>
-              <DropdownItem divider />
-              <DropdownItem>Another Action</DropdownItem>
-            </DropdownMenu>
-          </Dropdown>
           <NavItem>
-            <NavLink href="#" active>Link 1</NavLink>
+            <NavLink href="/login">Log In</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="#" >Link 2</NavLink>
+            <NavLink href="/register" > Register</NavLink>
           </NavItem>
           <NavItem>
             <NavLink href="#" >Link 3</NavLink>
