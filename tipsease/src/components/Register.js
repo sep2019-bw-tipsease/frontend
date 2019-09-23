@@ -31,7 +31,7 @@ const Register = () => {
     }
 
     const regUser = e => {
-
+        e.preventDefault()
     }
 
     return (
@@ -41,58 +41,50 @@ const Register = () => {
                 <Form className="form" onSubmit={regUser}>
                     <Col>
                         <FormGroup>
-                            <Label>First name</Label>
+                            <Label>Username</Label>
                             <Input
                                 type="text"
-                                name="first-name"
-                                id="exampleEmail"
-                                placeholder="First Name"
-                                onChange={handleChange}
-                            />
-                        </FormGroup>
-                        <FormGroup>
-                            <Label>Last name</Label>
-                            <Input
-                                type="text"
-                                name="last-name"
-                                id="exampleEmail"
-                                placeholder="Last Name"
-                                onChange={handleChange}
-                            />
-                        </FormGroup>
-                        <FormGroup>
-                            <Label>Email</Label>
-                            <Input
-                                type="email"
-                                name="email"
-                                id="exampleEmail"
-                                placeholder="myemail@email.com"
+                                name="user-name"
+                                placeholder="User name"
                                 onChange={handleChange}
                             />
                         </FormGroup>
                     </Col>
                     <Col>
                         <FormGroup>
-                            <Label for="examplePassword">Password</Label>
+                            <Label>First name</Label>
                             <Input
-                                type="password"
-                                name="password"
-                                id="examplePassword"
-                                placeholder="********"
-                                onChange={handleChange}
-                            />
-                        </FormGroup>
-                        <FormGroup>
-                            <Label for="exampleConfirmPassword">Confirm Password</Label>
-                            <Input
-                                type="password"
-                                name="confirmPassword"
-                                id="examplePassword"
-                                placeholder="********"
+                                type="text"
+                                name="first-name"
+
+                                placeholder="First Name"
                                 onChange={handleChange}
                             />
                         </FormGroup>
                     </Col>
+                    <Col >
+                        <FormGroup>
+                            <Label>Last name</Label>
+                            <Input
+                                type="text"
+                                name="last-name"
+
+                                placeholder="Last Name"
+                                onChange={handleChange}
+                            />
+                        </FormGroup>
+                    </Col>
+                    <Col >
+                        <FormGroup>
+                            <Label for="exampleSelect">Select</Label>
+                            <Input type="select" name="select" id="exampleSelect">
+                                <option>Worker</option>
+                                <option>Customer</option>
+
+                            </Input>
+                        </FormGroup>
+                    </Col>
+
                     <div className='button-cont'><Button type='submit' >Submit</Button></div>
                 </Form>
             </Container>

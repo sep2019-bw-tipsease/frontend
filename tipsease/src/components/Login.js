@@ -9,8 +9,6 @@ import { Link } from 'react-router-dom'
 const Login = () => {
 
 
-
-
     const userLogin = e => {
 
     }
@@ -20,9 +18,9 @@ const Login = () => {
     }
     return (
         <>
-
             <div>
-                <Container className="reg-page">
+                <Container className="login">
+                    <h2>Returning User? Sign in here</h2>
                     <Form className="form" onSubmit={userLogin}>
                         <Col>
                             <FormGroup>
@@ -58,5 +56,4 @@ const Login = () => {
         </>
     )
 }
-
 export default Login;
