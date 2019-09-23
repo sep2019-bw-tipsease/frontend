@@ -5,25 +5,31 @@ import {
     Button,
 } from 'reactstrap';
 import styled from 'styled-components'
+import logo from '../images/logo.png'
 
 
 const Register = () => {
 
     const RegForm = styled.div`
-        margin-top: 10%;
-       .reg-page {
-           display: flex;
-           flex-direction: column;
-           
-           h2 {
-               align-self: center;
-           }
-           .form {
-                .button-cont {
-                    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+       img {
+           width: 25rem;
+       }
+       .reg {
+           margin: 0;
+           width: 30rem;
+           .button-cont {
+                display: flex;
+                justify-content: center;
+                button {
+                    width: 8rem;
+                    background: #6E588A;
                 }
            }
        }
+
     `;
 
     const handleChange = e => {
@@ -36,8 +42,9 @@ const Register = () => {
 
     return (
         <RegForm>
-            <Container className="reg-page">
-                <h2>Register</h2>
+            <img src={logo} />
+            <Container className="reg">
+                <h2>New user? Register here</h2>
                 <Form className="form" onSubmit={regUser}>
                     <Col>
                         <FormGroup>
@@ -76,7 +83,7 @@ const Register = () => {
                     </Col>
                     <Col >
                         <FormGroup>
-                            <Label for="exampleSelect">Select</Label>
+                            <Label for="exampleSelect">Role</Label>
                             <Input type="select" name="select" id="exampleSelect">
                                 <option>Worker</option>
                                 <option>Customer</option>
