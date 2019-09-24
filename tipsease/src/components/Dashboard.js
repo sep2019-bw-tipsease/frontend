@@ -14,7 +14,7 @@ const Dashboard = ({ getWorkers, workers }) => {
     }, [getWorkers])
 
     return (
-        <div>
+        <div className="containerWrapper">
         {workers.map(w => {
             console.log(w)
             return <ServerPage key={w.id} w={w} />

@@ -3,12 +3,23 @@
   background: #EAE7ED;
   height: 100vh;
 }
+.containerWrapper{
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+
+
+}
+
+.cardContainer{
+  border: 1px solid red;
+  width: 300px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
 
 .card{
   border: 1px solid black;
   width: 200px;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: space-between;
 }
