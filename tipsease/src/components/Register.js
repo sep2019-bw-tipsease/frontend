@@ -42,7 +42,7 @@ const Register = () => {
 
     return (
         <RegForm>
-            <img src={logo} />
+            <img src={logo} alt='logo' />
             <Container className="reg">
                 <h2>New user? Register here</h2>
                 <Form className="form" onSubmit={regUser}>

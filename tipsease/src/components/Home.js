@@ -1,5 +1,5 @@
 import React from 'react'
-import Login from './Login'
+
 import { Button } from 'reactstrap'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
@@ -36,7 +36,7 @@ const Home = () => {
     return (
         <HomeCont>
            
-            <img src={logo}/>
+            <img src={logo} alt='logo'/>
 
             <p>Returning user? click here to log in</p>
             <Link to='/login'><Button>Log in</Button></Link>
