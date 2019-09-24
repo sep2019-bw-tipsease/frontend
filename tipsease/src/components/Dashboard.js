@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react'
 import axios from 'axios'
 import { connect } from 'react-redux'
@@ -16,13 +17,16 @@ const Dashboard = ({ getWorkers }) => {
         getWorkers()
     }, [getWorkers])
 
+
     return (
-        <>
-            <h1>imagine a grid here!</h1>
-            <p></p>
-        </>
-    )
-}
+        <div className="server-page">
+          {servers.map(server => {
+            console.log(server);
+            return <ServerPage key={server.id} server={server} />;
+    })}
+        </div>
+      );
+    };
 
 const mapStateToProps = state => {
     console.log(state, 'dashboard state')
