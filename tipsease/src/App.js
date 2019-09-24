@@ -6,7 +6,7 @@ import { Route } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import Login from "./components/Login";
 import Dashboard from './components/Dashboard'
-import ServerPage from './components/ServerPage';
+import PrivateRoute from './utils/PrivateRoute'
 
 function App() {
   return (
@@ -16,8 +16,7 @@ function App() {
       <Route exact path='/' component={Home} />
       <Route path='/register' component={Register} />
       <Route path="/login" component={Login} />
-      <Route path='/dashboard' component={Dashboard} />
-      <Route path='/ServerPage' component={ServerPage} />
+      <PrivateRoute path='/dashboard' component={Dashboard} />
     </div>
   );
 }

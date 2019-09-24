@@ -1,23 +1,12 @@
-import React from 'react';
-import {
-    Card, Button, CardImg, CardTitle, CardText, CardDeck,
-    CardSubtitle, CardBody
-  } from 'reactstrap';
+import React from 'react'
 
-const ServerPage = (props) => {
-    const { username, species, status} = props.server;
+const ServerPage = () => {
     return (
-        <CardDeck className="ServerCards ">
-          <Card>
-            <CardBody>
-              <CardTitle>{username}</CardTitle>
-              <CardSubtitle>Card subtitle</CardSubtitle>
-              <CardText>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</CardText>
-              <Button>Button</Button>
-            </CardBody>
-          </Card>
-        </CardDeck>
-      );
+        <>
+            <h2>individual server</h2>
+            <button>add tip!</button>
+        </>
+    )
 }
 
 export default ServerPage
