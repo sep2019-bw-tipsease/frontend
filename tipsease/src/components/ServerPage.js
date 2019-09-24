@@ -7,7 +7,7 @@ import {
 const ServerPage = (props) => {
     const {username, first_name, last_name, image, tagline, time, tip_total} = props.w;
   return (
-    <div>
+    <div className="cardContainer">
       <Card className="card">
           <CardBody>
         <CardImg className="Img" src={image} alt="Card image cap" />
