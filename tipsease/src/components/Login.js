@@ -6,7 +6,8 @@ import {
 } from 'reactstrap';
 import logo from '../images/logo.png'
 import styled from 'styled-components'
-
+import { axiosWithAuth } from '../utils/axiosWithAuth'
+import axios from 'axios'
 
 const Login = props => {
 
@@ -21,12 +22,22 @@ const Login = props => {
         setCredentials({
             ...credentials,
             [e.target.name]: e.target.value
-        });
-        console.log(setCredentials)
-    };
+        })
+        // console.log(credentials)
+    }
 
     const userLogin = e => {
         e.preventDefault();
+        // console.log(credentials)
+        // e.persist();
+        axios
+            .post('https://tipsease-app.herokuapp.com/api/users/login', credentials)
+            .then(res => {
+                console.log(res)
+                localStorage.setItem('token', res.data.token);
+                props.history.push('/dashboard')
+            })
+            .catch(err => console.log(err, 'error on login'))
     }
 
     return (
@@ -44,7 +55,6 @@ const Login = props => {
                         <FormGroup>
                             <Label>Username</Label>
                             <Input
-                                key='abc'
                                 type="text"
                                 name="username"
                                 value={credentials.username}
@@ -60,7 +70,7 @@ const Login = props => {
                                 type="password"
                                 name="password"
                                 value={credentials.password}
-                                placeholder="********"
+                                placeholder='password'
                                 onChange={handleChange}
                             />
                         </FormGroup>
