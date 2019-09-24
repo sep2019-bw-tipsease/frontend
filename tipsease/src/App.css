@@ -4,3 +4,11 @@
   height: 100vh;
 }
 
+.card{
+  border: 1px solid black;
+  width: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+}
