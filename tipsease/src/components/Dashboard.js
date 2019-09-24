@@ -1,22 +1,23 @@
-import React, { useState, useEffect } from 'react'; 
-import axios from 'axios'; 
-import ServerPage from "./ServerPage"; 
 
-const Dashboard = () => {
-    const [servers, setServers] = useState([]);
-    
+import React, { useEffect } from 'react'
+import axios from 'axios'
+import { connect } from 'react-redux'
+import { getWorkers } from './actions'
+
+const Dashboard = ({ getWorkers }) => {
+
+    // useEffect(() => {
+    //     axios
+    //         .get('https://5d8947bcb2568e0014d87a57.mockapi.io/people')
+    //         .then(res => {
+    //             console.log(res)
+    //         })
+    // }, [])
     useEffect(() => {
-        axios
-            .get('https://5d8947bcb2568e0014d87a57.mockapi.io/people')
-            .then(res => {
-                console.log(res);
-                setServers(res.data);
-            })
-            .catch(error => {
-                console.log("The data was not returned", error);
-            });
-    }, [])
-    
+        getWorkers()
+    }, [getWorkers])
+
+
     return (
         <div className="server-page">
           {servers.map(server => {
@@ -27,4 +28,11 @@ const Dashboard = () => {
       );
     };
 
-export default Dashboard
+const mapStateToProps = state => {
+    console.log(state, 'dashboard state')
+}
+
+export default connect(
+    mapStateToProps,
+    { getWorkers }
+)(Dashboard)
