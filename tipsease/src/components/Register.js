@@ -98,7 +98,7 @@ const Register = props => {
                     <Col >
                         <FormGroup>
                             <Label for="exampleSelect">Role</Label>
-                            <Input type="select" name="role" id="exampleSelect" onChange={handleChange} value={newUser.role}>
+                            <Input type="select" name="role" id="exampleSelect" onChange={handleChange} defaultValue='worker'>
                                 <option>worker</option>
                                 <option>customer</option>
 
