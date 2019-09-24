@@ -13,7 +13,7 @@ export const getWorkers = () => dispatch => {
 
         .then(res => {
             // console.log(res, 'api request')
-            dispatch({ type: SUCCESS, payload: res })
+            dispatch({ type: SUCCESS, payload: res.data })
         })
         .catch(err => {
             console.log(err, 'error on get workers')

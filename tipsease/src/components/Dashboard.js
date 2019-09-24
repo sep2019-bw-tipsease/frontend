@@ -4,7 +4,8 @@ import { connect } from 'react-redux'
 import { getWorkers } from './actions'
 
 
-const Dashboard = ({ getWorkers }) => {
+const Dashboard = ({ getWorkers, workers }) => {
+    console.log(workers)
 
 
     useEffect(() => {
@@ -12,15 +13,18 @@ const Dashboard = ({ getWorkers }) => {
     }, [getWorkers])
 
     return (
-        <>
+        <div>
             <h1>imagine a grid here!</h1>
-            <p></p>
-        </>
+            {workers.map(w => {
+                console.log(w)
+            })}
+
+        </div>
     )
 }
 
 const mapStateToProps = state => {
-    console.log(state, 'dashboard state')
+    // console.log(state, 'dashboard state')
     return {
         workers: state.workers
     }
