@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { getWorkers } from './actions';
 import ServerPage from './ServerPage';
+import logo from '../images/logo.png';
 
 
 
@@ -14,6 +15,7 @@ const Dashboard = ({ getWorkers, workers }) => {
 
     return (
         <div className="containerWrapper">
+             <img className="DashLogo" src={logo} alt='logo'/>
             {workers.map(w => {
                 // console.log(w)
                 return <ServerPage key={w.id} w={w} />
