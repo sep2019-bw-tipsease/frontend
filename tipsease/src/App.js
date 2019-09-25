@@ -7,6 +7,7 @@ import Navigation from './components/Navigation';
 import Login from "./components/Login";
 import Dashboard from './components/Dashboard'
 import PrivateRoute from './utils/PrivateRoute'
+import IdServer from './components/IdServer';
 
 function App() {
   return (
@@ -16,8 +17,12 @@ function App() {
       <Route exact path='/' component={Home} />
       <Route path='/register' component={Register} />
       <Route path="/login" component={Login} />
-      {/* <PrivateRoute path='/dashboard' component={Dashboard} /> */}
-      <Route path="/dashboard" component={Dashboard} />
+      <PrivateRoute path='/dashboard' component={Dashboard} />
+
+      <PrivateRoute path='/idserver' component={IdServer} />
+
+      
+
     </div>
   );
 }

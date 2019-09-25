@@ -17,6 +17,17 @@ export const getWorkers = () => dispatch => {
         })
 }
 
+export const getOneWorker = () => dispatch => {
+    axiosWithAuth()
+        .get('/workers/id')
+        .then(res => {
+            console.log(res, 'indivdual server api request')
+            dispatch({ type: SUCCESS, payload: res.data })
+        })
+        .catch(err => console.log(err, 'error on id server'))
+}
+
+
 export const signOut = e => {
     // console.log(e, 'signing out')
     localStorage.removeItem('token')
