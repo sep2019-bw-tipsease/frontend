@@ -1,5 +1,6 @@
 import React from 'react';
-import { Nav, NavItem, Dropdown, DropdownItem, DropdownToggle, DropdownMenu, NavLink } from 'reactstrap';
+import { Nav, NavItem, NavLink } from 'reactstrap';
+import { signOut, toMarketing } from './actions'
 
 export default class Navigation extends React.Component {
   constructor(props) {
@@ -17,12 +18,14 @@ export default class Navigation extends React.Component {
     });
   }
 
+
+
   render() {
     return (
       <div>
         <Nav tabs>
           <NavItem>
-            <NavLink href="/login">Log In</NavLink>
+            <NavLink href="#" onClick={toMarketing}>Tipsease</NavLink>
           </NavItem>
           <NavItem>
             <NavLink href="/register" > Register</NavLink>
@@ -31,7 +34,10 @@ export default class Navigation extends React.Component {
             <NavLink href="/dashboard" >Dashboard</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="#">Link 4</NavLink>
+            <NavLink href="/login">Log In</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href="/" onClick={signOut}>Sign Out</NavLink>
           </NavItem>
         </Nav>
       </div>

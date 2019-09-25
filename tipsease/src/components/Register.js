@@ -6,7 +6,6 @@ import {
 } from 'reactstrap';
 import styled from 'styled-components'
 import logo from '../images/logo.png'
-import { axiosWithAuth } from '../utils/axiosWithAuth'
 import axios from 'axios'
 
 const Register = props => {
@@ -25,7 +24,7 @@ const Register = props => {
             ...newUser,
             [e.target.name]: e.target.value
         })
-        // console.log(newUser)
+        console.log(newUser)
     }
 
     const regUser = e => {

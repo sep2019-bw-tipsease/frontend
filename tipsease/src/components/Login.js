@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import {
     Container, Col, Form,
     FormGroup, Label, Input,
@@ -6,7 +6,7 @@ import {
 } from 'reactstrap';
 import logo from '../images/logo.png'
 import styled from 'styled-components'
-import { axiosWithAuth } from '../utils/axiosWithAuth'
+
 import axios from 'axios'
 
 const Login = props => {
@@ -47,7 +47,7 @@ const Login = props => {
             <Container className="login">
                 <h2>Returning User? Sign in here</h2>
 
-                <Form className="form" onSubmit={userLogin} >
+                <Form className="form" onSubmit={userLogin} autoComplete='on'>
                     <Col>
                         <FormGroup>
 
@@ -72,6 +72,7 @@ const Login = props => {
                                 value={credentials.password}
                                 placeholder='password'
                                 onChange={handleChange}
+                                autoComplete='on'
                             />
                         </FormGroup>
                     </Col>

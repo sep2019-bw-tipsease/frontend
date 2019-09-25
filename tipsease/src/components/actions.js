@@ -1,10 +1,7 @@
-import axios from 'axios';
 import { axiosWithAuth } from '../utils/axiosWithAuth';
 
 export const LOADING = 'LOADING';
 export const SUCCESS = 'SUCCESS';
-export const FAILURE = 'FAILURE';
-export const ADD = 'ADD';
 
 export const getWorkers = () => dispatch => {
     dispatch({ type: LOADING });
@@ -18,4 +15,13 @@ export const getWorkers = () => dispatch => {
         .catch(err => {
             console.log(err, 'error on get workers')
         })
+}
+
+export const signOut = e => {
+    // console.log(e, 'signing out')
+    localStorage.removeItem('token')
+}
+
+export const toMarketing = e => {
+    window.open('https://laughing-bassi-45295e.netlify.com')
 }
