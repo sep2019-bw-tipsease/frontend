@@ -3,6 +3,17 @@
   background: #EAE7ED;
   height: 100vh;
 }
+/* 
+.Nav{
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+}
+a{
+  color: white;
+    font-family: "Pacifico", cursive;
+    text-decoration: none;
+    font-style: italic;
+} */
+
 .containerWrapper{
   margin: 0;
   display: flex;
@@ -24,8 +35,18 @@
 .card{
   border: 1px solid black;
   width: 200px;
-  background: grey;
+  /* background: grey; */
+  border-radius: 50px;
 
+}
+
+.Img{ 
+  border-radius: 100px;
+  padding: 10px 0;
+}
+
+.btn{
+  border-radius: 100px;
 }
 
 .DashLogo{

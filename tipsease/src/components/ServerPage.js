@@ -14,7 +14,7 @@ const ServerPage = (props) => {
   return (
     <div className="cardContainer">
       <Card className="card">
-        <CardBody>
+        <CardBody className="info">
           <CardImg className="Img" src={image} alt="Card image cap" />
           <CardTitle>Username: {username}</CardTitle>
           <CardTitle>Name: {first_name}</CardTitle>
@@ -22,7 +22,7 @@ const ServerPage = (props) => {
           <CardText>Quote: "{tagline}"</CardText>
           <CardSubtitle>Time: {time}</CardSubtitle>
           <CardText>Total Tip: {tip_total}</CardText>
-          <Link to='idserver'><Button>Tip Me!</Button></Link>
+          <Link to='idserver'><Button className="btn">Tip Me!</Button></Link>
         </CardBody>
       </Card>
     </div>
