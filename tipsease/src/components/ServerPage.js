@@ -3,7 +3,11 @@ import {
   Card, CardImg, CardText, CardBody,
   CardTitle, CardSubtitle, Button
 } from 'reactstrap';
+
 import { Link } from 'react-router-dom'
+
+import logo from '../images/logo.png';
+
 
 const ServerPage = (props) => {
   const { username, first_name, last_name, image, tagline, time, tip_total } = props.w;
