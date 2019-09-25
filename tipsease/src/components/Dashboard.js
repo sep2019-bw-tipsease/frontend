@@ -16,12 +16,14 @@ const Dashboard = ({ getWorkers, workers }) => {
     return (
         <div className="containerWrapper">
              <img className="DashLogo" src={logo} alt='logo'/>
-            {workers.map(w => {
-                // console.log(w)
-                return <ServerPage key={w.id} w={w} />
+            <div className="cardContainerAll">
+                {workers.map(w => {
+                    // console.log(w)
+                    return <ServerPage key={w.id} w={w} />
+    
+                })}
 
-            })}
-
+            </div>  
         </div>
     )
 }
