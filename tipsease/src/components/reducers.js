@@ -1,4 +1,4 @@
-import { LOADING, SUCCESS, FAILURE, ADD } from './actions'
+import { LOADING, SUCCESS } from './actions'
 
 const initialState = {
     workers: [],
