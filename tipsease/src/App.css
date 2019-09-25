@@ -6,13 +6,15 @@
 .containerWrapper{
   margin: 0;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-
+  flex-direction: column;
+  align-items: center;
 }
-
+.cardContainerAll{
+  /* border: 1px solid black; */
+  display: flex;
+}
 .cardContainer{
-  border: 1px solid red;
+  /* border: 1px solid red; */
   width: 300px;
   margin: 0;
   display: flex;
@@ -22,6 +24,8 @@
 .card{
   border: 1px solid black;
   width: 200px;
+  background: grey;
+
 }
 
 .DashLogo{
