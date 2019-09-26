@@ -34,9 +34,9 @@ const LoginAsWorker = props => {
         axios
             .post('https://tipsease-app.herokuapp.com/api/users/workerlogin', credentials)
             .then(res => {
-                console.log(res)
+                // console.log(res)
                 localStorage.setItem('token', res.data.token);
-                props.history.push('/dashboard')
+                props.history.push('/workerdashboard')
             })
             .catch(err => console.log(err, 'error on login'))
     }
