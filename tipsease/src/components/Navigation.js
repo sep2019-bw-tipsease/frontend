@@ -23,7 +23,7 @@ export default class Navigation extends React.Component {
   render() {
     return (
       <div>
-        <Nav tabs>
+        <Nav tabs className="Nav">
           <NavItem>
             <NavLink href="#" onClick={toMarketing}>Tipsease</NavLink>
           </NavItem>

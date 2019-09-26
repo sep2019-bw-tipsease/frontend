@@ -21,12 +21,16 @@ const ServerPage = props => {
 
 
   return (
+
     <div>
       <h1>serverpage</h1>
       <div>
 
         <h1>{workers.username}</h1>
       </div>
+
+
+
     </div>
   );
 };
