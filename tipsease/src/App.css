@@ -1,7 +1,7 @@
 .App {
   /* text-align: center; */
   background: #EAE7ED;
-  height: 100vh;
+  /* height: 100vh; */
 }
 /* 
 .Nav{
@@ -36,18 +36,18 @@ a{
   border: 1px solid black;
   width: 200px;
   /* background: grey; */
-  border-radius: 50px;
+  /* border-radius: 50px; */
 
 }
 
 .Img{ 
-  border-radius: 100px;
+  /* border-radius: 100px; */
   padding: 10px 0;
 }
 
-.btn{
-  border-radius: 100px;
-}
+/* .btn{ */
+  /* border-radius: 100px; */
+/* } */
 
 .DashLogo{
   width: 25rem;

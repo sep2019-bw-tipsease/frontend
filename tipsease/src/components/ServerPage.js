@@ -1,42 +1,32 @@
 import React, { useEffect } from 'react';
-import {
-  Card, CardImg, CardText, CardBody,
-  CardTitle, CardSubtitle, Button
-} from 'reactstrap';
-import { Link } from 'react-router-dom'
 import { getOneWorker } from './actions'
 import { connect } from 'react-redux';
-
+import styled from 'styled-components'
 
 const ServerPage = props => {
   const { getOneWorker, workers } = props
-  // const { username, first_name, last_name, image, tagline, time, tip_total, id } = props.w;
-  // console.log(props)
+
   const id = props.match.params.id
-  console.log(workers, 'serverpage')
 
   useEffect(() => {
     getOneWorker(id)
-  }, [getOneWorker])
-
+  }, [getOneWorker, id])
 
   return (
 
-    <div>
-      <h1>serverpage</h1>
-      <div>
-
-        <h1>{workers.username}</h1>
+    <StyledServer>
+      <div className='worker-wrap'>
+        <h4>{workers.first_name} {workers.last_name}</h4>
+        <p></p>
+        <p></p>
+        <p></p>
       </div>
-
-
-
-    </div>
+    </StyledServer>
   );
 };
 
 const mapStateToProps = state => {
-  console.log(state)
+  // console.log(state)
   return {
     workers: state.workers
   }
@@ -46,3 +36,11 @@ export default connect(
   mapStateToProps,
   { getOneWorker }
 )(ServerPage);
+
+const StyledServer = styled.div`
+    height: 100vh;
+    .worker-wrap {
+      border: 1px solid red;
+      background: white;
+    }
+`;

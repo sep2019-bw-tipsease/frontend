@@ -7,7 +7,6 @@ import Navigation from './components/Navigation';
 import Login from "./components/Login";
 import Dashboard from './components/Dashboard'
 import PrivateRoute from './utils/PrivateRoute'
-import IdServer from './components/IdServer';
 import RegisterAsWorker from './components/RegisterAsWorker';
 import LoginAsWorker from './components/LoginAsWorker';
 import ServerPage from './components/ServerPage';
