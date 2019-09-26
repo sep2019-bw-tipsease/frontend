@@ -1,4 +1,4 @@
-# ipsease
+# Tipsease
 
 ## Introduction
     
