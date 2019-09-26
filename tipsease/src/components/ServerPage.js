@@ -1,42 +1,57 @@
-import React, { useEffect } from 'react';
-import {
-  Card, CardImg, CardText, CardBody,
-  CardTitle, CardSubtitle, Button
-} from 'reactstrap';
-import { Link } from 'react-router-dom'
+import React, { useEffect, useState } from 'react';
 import { getOneWorker } from './actions'
 import { connect } from 'react-redux';
+import styled from 'styled-components'
+import logo from '../images/logo.png'
+import { Button } from 'reactstrap'
 
 
 const ServerPage = props => {
-  const { getOneWorker, workers } = props
-  // const { username, first_name, last_name, image, tagline, time, tip_total, id } = props.w;
-  // console.log(props)
-  const id = props.match.params.id
-  console.log(workers, 'serverpage')
 
+  const { getOneWorker, workers } = props
+  const id = props.match.params.id
   useEffect(() => {
     getOneWorker(id)
-  }, [getOneWorker])
+  }, [getOneWorker, id])
+
+  const [tip, setTip] = useState({
+    tip: ''
+  })
+
+  const handleChange = e => {
+    setTip({
+      ...tip,
+      [e.target.name]: e.target.value
+    })
+  }
+
+  const addTip = e => {
+    console.log(e, 'inside add tip func')
+    e.preventDefault();
+  }
 
 
   return (
 
-    <div>
-      <h1>serverpage</h1>
-      <div>
-
-        <h1>{workers.username}</h1>
+    <StyledServer>
+      <img src={logo} alt='tipseaselogo' />
+      <div className='worker-wrap'>
+        <h4>{workers.first_name} {workers.last_name}</h4>
+        <p>username: {workers.username}</p>
+        <p>company: {workers.company}</p>
+        <p>catchphrase: {workers.tagline}</p>
+        <form onSubmit={addTip}>
+          <label>add a tip</label><br></br>
+          $ <input type='number' name='tip' placeholder='00.00' value={tip.tip} onChange={handleChange} /><br></br>
+          <div className='button-cont'><Button>Add</Button></div>
+        </form>
       </div>
-
-
-
-    </div>
+    </StyledServer>
   );
 };
 
 const mapStateToProps = state => {
-  console.log(state)
+  // console.log(state)
   return {
     workers: state.workers
   }
@@ -46,3 +61,40 @@ export default connect(
   mapStateToProps,
   { getOneWorker }
 )(ServerPage);
+
+const StyledServer = styled.div`
+    height: 100vh;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    img {
+      width: 25rem;
+    }
+    .worker-wrap {
+      /* border: 1px solid red; */
+      border-radius: 10px;
+      color: #EAE7ED;
+      background: #B793E6;
+      margin: 0 5rem 5rem 5rem;
+      padding: 2rem 5rem;
+      form {
+        text-align: center;
+          input {
+            text-align: right;
+            border-radius: 10px;
+            border-style: none;
+          }
+
+          .button-cont {
+            display: flex;
+            justify-content: center;
+            margin:1rem;
+              button {
+                width: 8rem;
+                background: #6E588A;
+
+             }
+          }
+      }
+    }
+`;

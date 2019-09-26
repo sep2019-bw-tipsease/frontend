@@ -18,8 +18,6 @@ export default class Navigation extends React.Component {
     });
   }
 
-
-
   render() {
     return (
       <div>
@@ -28,13 +26,10 @@ export default class Navigation extends React.Component {
             <NavLink href="#" onClick={toMarketing}>Tipsease</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="/register" > Register</NavLink>
-          </NavItem>
-          <NavItem>
             <NavLink href="/dashboard" >Dashboard</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="/login">Log In</NavLink>
+            <NavLink href="/">Register/login</NavLink>
           </NavItem>
           <NavItem>
             <NavLink href="/" onClick={signOut}>Sign Out</NavLink>
