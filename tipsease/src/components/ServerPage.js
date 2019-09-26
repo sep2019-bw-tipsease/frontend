@@ -22,7 +22,6 @@ const ServerPage = props => {
 
   return (
 
-
     <div>
       <h1>serverpage</h1>
       <div>
