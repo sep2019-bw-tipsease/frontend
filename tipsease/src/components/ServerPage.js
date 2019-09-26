@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { getOneWorker } from './actions'
+import { getOneWorker, addTipToServer } from './actions'
 import { connect } from 'react-redux';
 import styled from 'styled-components'
 import logo from '../images/logo.png'
 import { Button } from 'reactstrap'
+import { axiosWithAuth } from './axiosWithAuth';
 
 
 const ServerPage = props => {
@@ -14,36 +15,52 @@ const ServerPage = props => {
     getOneWorker(id)
   }, [getOneWorker, id])
 
-  const [tip, setTip] = useState({
-    tip: ''
+  const [editTip, setEditTip] = useState({
+    tip: 0
   })
 
+
+
   const handleChange = e => {
-    setTip({
-      ...tip,
-      [e.target.name]: e.target.value
+    setEditTip({
+      ...editTip,
+      [e.target.name]: Number.parseInt(e.target.value)
     })
-  }
 
+    console.log(editTip, 'updated tip')
+
+  }
   const addTip = e => {
-    console.log(e, 'inside add tip func')
-    e.preventDefault();
+
+    // console.log(e, 'inside add tip func')
+    e.preventDefault()
+    axiosWithAuth()
+      .put(`/workers/${id}/tips`, editTip)
+      .then(res => {
+        console.log(res)
+        getOneWorker(id)
+      })
+
+      .catch(err => console.log(err, 'error on post tip'))
+
+    // alert()
   }
-
-
   return (
-
     <StyledServer>
       <img src={logo} alt='tipseaselogo' />
       <div className='worker-wrap'>
-        <h4>{workers.first_name} {workers.last_name}</h4>
+        <div className='header-cont'>
+          <h4>{workers.first_name} {workers.last_name}</h4>
+        </div>
         <p>username: <br></br>{workers.username}</p>
         <p>company:  <br></br>{workers.company}</p>
         <p>catchphrase:  <br></br>{workers.tagline}</p>
+        <p>total tips: {workers.tip_total}</p>
         <form onSubmit={addTip}>
           <label>add a tip</label><br></br>
-          $ <input type='number' name='tip' placeholder='00.00' value={tip.tip} onChange={handleChange} /><br></br>
+          $ <input type='text' name='tip' value={editTip.tip} onChange={handleChange} selected='selected' /><br></br>
           <div className='button-cont'><Button>Add</Button></div>
+
         </form>
       </div>
     </StyledServer>
@@ -51,7 +68,7 @@ const ServerPage = props => {
 };
 
 const mapStateToProps = state => {
-  console.log(state)
+  // console.log(state)
   return {
     workers: state.workers
   }
@@ -76,7 +93,10 @@ const StyledServer = styled.div`
       color: #EAE7ED;
       background: #B793E6;
       margin: 0 5rem 5rem 5rem;
-      padding: 2rem 5rem;
+      padding: 2rem 3rem;
+      .header-cont {
+        text-align: center;
+      }
       form {
         text-align: center;
           input {
