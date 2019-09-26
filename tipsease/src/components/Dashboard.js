@@ -14,6 +14,7 @@ const Dashboard = ({ getWorkers, workers }) => {
     }, [getWorkers])
 
     return (
+
         <StyledDash className="containerWrapper">
 
             <img src={logo} alt='logo' />
@@ -41,6 +42,8 @@ const Dashboard = ({ getWorkers, workers }) => {
                 })}
             </div>
         </StyledDash>
+
+
     )
 }
 

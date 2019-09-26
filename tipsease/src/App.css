@@ -3,16 +3,29 @@
   background: #EAE7ED;
   height: 100vh;
 }
+/* 
+.Nav{
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+}
+a{
+  color: white;
+    font-family: "Pacifico", cursive;
+    text-decoration: none;
+    font-style: italic;
+} */
+
 .containerWrapper{
   margin: 0;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-
+  flex-direction: column;
+  align-items: center;
 }
-
+.cardContainerAll{
+  /* border: 1px solid black; */
+  display: flex;
+}
 .cardContainer{
-  border: 1px solid red;
+  /* border: 1px solid red; */
   width: 300px;
   margin: 0;
   display: flex;
@@ -22,6 +35,18 @@
 .card{
   border: 1px solid black;
   width: 200px;
+  /* background: grey; */
+  border-radius: 50px;
+
+}
+
+.Img{ 
+  border-radius: 100px;
+  padding: 10px 0;
+}
+
+.btn{
+  border-radius: 100px;
 }
 
 .DashLogo{
