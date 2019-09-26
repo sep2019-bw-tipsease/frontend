@@ -8,14 +8,17 @@ import styled from 'styled-components'
 import logo from '../images/logo.png'
 import axios from 'axios'
 
-const Register = props => {
+const RegisterAsWorker = props => {
 
     const [newUser, setNewUser] = useState({
         username: '',
         password: '',
         first_name: '',
         last_name: '',
-
+        time: '',
+        tagline: '',
+        job_title: '',
+        company: ''
     })
 
     const handleChange = e => {
@@ -31,10 +34,10 @@ const Register = props => {
         e.preventDefault()
         console.log(newUser)
         axios
-            .post('https://tipsease-app.herokuapp.com/api/users/register/customer', newUser)
+            .post('https://tipsease-app.herokuapp.com/api/users/register/worker', newUser)
             .then(res => {
                 // console.log(res)
-                props.history.push('/login')
+                props.history.push('loginworker')
             })
             .catch(err => console.log(err, 'error on register'))
     }
@@ -95,6 +98,54 @@ const Register = props => {
                             />
                         </FormGroup>
                     </Col>
+                    <Col >
+                        <FormGroup>
+                            <Label>time</Label>
+                            <Input
+                                type="text"
+                                name="time"
+                                placeholder="time working for company"
+                                onChange={handleChange}
+                                value={newUser.time}
+                            />
+                        </FormGroup>
+                    </Col>
+                    <Col >
+                        <FormGroup>
+                            <Label>tagline</Label>
+                            <Input
+                                type="text"
+                                name="tagline"
+                                placeholder="tagline"
+                                onChange={handleChange}
+                                value={newUser.tagline}
+                            />
+                        </FormGroup>
+                    </Col>
+                    <Col >
+                        <FormGroup>
+                            <Label>job title</Label>
+                            <Input
+                                type="text"
+                                name="job_title"
+                                placeholder="job title"
+                                onChange={handleChange}
+                                value={newUser.job_title}
+                            />
+                        </FormGroup>
+                    </Col>
+                    <Col >
+                        <FormGroup>
+                            <Label>Company</Label>
+                            <Input
+                                type="text"
+                                name="company"
+                                placeholder="company"
+                                onChange={handleChange}
+                                value={newUser.company}
+                            />
+                        </FormGroup>
+                    </Col>
 
 
                     <div className='button-cont'><Button type='submit' >Submit</Button></div>
@@ -126,4 +177,4 @@ align-items: center;
 
 `;
 
-export default Register;
+export default RegisterAsWorker;

@@ -8,6 +8,9 @@ import Login from "./components/Login";
 import Dashboard from './components/Dashboard'
 import PrivateRoute from './utils/PrivateRoute'
 import IdServer from './components/IdServer';
+import RegisterAsWorker from './components/RegisterAsWorker';
+import LoginAsWorker from './components/LoginAsWorker';
+import ServerPage from './components/ServerPage';
 
 function App() {
   return (
@@ -17,12 +20,10 @@ function App() {
       <Route exact path='/' component={Home} />
       <Route path='/register' component={Register} />
       <Route path="/login" component={Login} />
-      <PrivateRoute path='/dashboard' component={Dashboard} />
-
-      <PrivateRoute path='/idserver' component={IdServer} />
-
-      
-
+      <Route path="/loginworker" component={LoginAsWorker} />
+      <Route path='/workerreg' component={RegisterAsWorker} />
+      <PrivateRoute exact path='/dashboard' component={Dashboard} />
+      <PrivateRoute path='/dashboard/:id' component={ServerPage} />
     </div>
   );
 }

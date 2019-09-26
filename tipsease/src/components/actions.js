@@ -13,13 +13,14 @@ export const getWorkers = () => dispatch => {
             dispatch({ type: SUCCESS, payload: res.data })
         })
         .catch(err => {
-            console.log(err, 'error on get workers')
+            // console.log(err, 'error on get workers')
         })
 }
 
-export const getOneWorker = () => dispatch => {
+export const getOneWorker = id => dispatch => {
+
     axiosWithAuth()
-        .get('/workers/id')
+        .get(`/workers/${id}`)
         .then(res => {
             console.log(res, 'indivdual server api request')
             dispatch({ type: SUCCESS, payload: res.data })
