@@ -5,6 +5,8 @@ import logo from '../images/logo.png';
 import styled from 'styled-components'
 import { Button } from 'reactstrap'
 import { Link } from 'react-router-dom'
+
+
 const Dashboard = ({ getWorkers, workers }) => {
     // console.log(workers);
     useEffect(() => {
@@ -51,7 +53,7 @@ const StyledDash = styled.div`
         color: #6E588A;
     }
     .server-wrap {
-        border: 1px solid red;
+
         width: 100%;
         display: flex;
         flex-wrap: wrap;

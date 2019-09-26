@@ -23,11 +23,15 @@ export const getOneWorker = id => dispatch => {
     axiosWithAuth()
         .get(`/workers/${id}`)
         .then(res => {
-            // console.log(res, 'indivdual server api request')
+            console.log(res, 'indivdual server api request')
             dispatch({ type: SUCCESS, payload: res.data })
         })
         .catch(err => console.log(err, 'error on id server'))
 }
+
+// export const getMyself = () => {
+//     .get('')
+// }
 
 
 export const signOut = e => {

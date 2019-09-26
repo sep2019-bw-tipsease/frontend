@@ -1,7 +1,12 @@
 .App {
   /* text-align: center; */
   background: #EAE7ED;
-  /* height: 100vh; */
+  height: 100vh;
+}
+
+
+body {
+  background: #EAE7ED;
 }
 /* 
 .Nav{
@@ -14,41 +19,10 @@ a{
     font-style: italic;
 } */
 
+
 .containerWrapper{
   margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-.cardContainerAll{
-  /* border: 1px solid black; */
-  display: flex;
-}
-.cardContainer{
-  /* border: 1px solid red; */
-  width: 300px;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-}
-
-.card{
-  border: 1px solid black;
-  width: 200px;
-  /* background: grey; */
-  /* border-radius: 50px; */
-
-}
-
-.Img{ 
-  /* border-radius: 100px; */
-  padding: 10px 0;
-}
-
-/* .btn{ */
-  /* border-radius: 100px; */
-/* } */
-
-.DashLogo{
-  width: 25rem;
 }

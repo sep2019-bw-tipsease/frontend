@@ -10,6 +10,7 @@ import PrivateRoute from './utils/PrivateRoute'
 import RegisterAsWorker from './components/RegisterAsWorker';
 import LoginAsWorker from './components/LoginAsWorker';
 import ServerPage from './components/ServerPage';
+import WorkerDashboard from './components/WorkerDashboard'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <Route path="/login" component={Login} />
       <Route path="/loginworker" component={LoginAsWorker} />
       <Route path='/workerreg' component={RegisterAsWorker} />
+      <PrivateRoute exact path='/workerdashboard' component={WorkerDashboard} />
       <PrivateRoute exact path='/dashboard' component={Dashboard} />
       <PrivateRoute path='/dashboard/:id' component={ServerPage} />
     </div>
