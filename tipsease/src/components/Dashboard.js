@@ -1,14 +1,12 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { getWorkers } from './actions';
-import ServerPage from './ServerPage';
 import logo from '../images/logo.png';
 import styled from 'styled-components'
 import { Button } from 'reactstrap'
 import { Link } from 'react-router-dom'
 const Dashboard = ({ getWorkers, workers }) => {
     // console.log(workers);
-
     useEffect(() => {
         getWorkers()
     }, [getWorkers])
@@ -18,19 +16,15 @@ const Dashboard = ({ getWorkers, workers }) => {
         <StyledDash className="containerWrapper">
 
             <img src={logo} alt='logo' />
-
+            <h2>Your tipsease workers</h2>
             <div className='server-wrap'>
                 {workers.map(w => {
-                    // console.log(w)
-                    // return <ServerPage key={w.id} w={w} />
                     return (
-
                         <div className='server-card'>
-                            {/* <p>{w.first_name}</p>
-                            <p>{w.last_name}</p> */}
                             <div className='header-cont'>
-                                <h4>{w.first_name} {w.last_name}</h4>
+                                <h4>{w.username}</h4>
                             </div>
+                            <p>{w.first_name} {w.last_name}</p>
                             <p>company: {w.company}</p>
                             <p>position: {w.job_title}</p>
                             <p>catchphrase: {w.tagline}</p>
