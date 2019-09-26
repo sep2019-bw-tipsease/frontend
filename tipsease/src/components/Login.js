@@ -34,7 +34,7 @@ const Login = props => {
         axios
             .post('https://tipsease-app.herokuapp.com/api/users/customerlogin', credentials)
             .then(res => {
-                console.log(res)
+                // console.log(res)
                 localStorage.setItem('token', res.data.token);
                 props.history.push('/dashboard')
             })
