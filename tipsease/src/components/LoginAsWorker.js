@@ -9,7 +9,7 @@ import styled from 'styled-components'
 
 import axios from 'axios'
 
-const Login = props => {
+const LoginAsWorker = props => {
     // console.log(props)
 
 
@@ -32,7 +32,7 @@ const Login = props => {
         // console.log(credentials)
         // e.persist();
         axios
-            .post('https://tipsease-app.herokuapp.com/api/users/customerlogin', credentials)
+            .post('https://tipsease-app.herokuapp.com/api/users/workerlogin', credentials)
             .then(res => {
                 console.log(res)
                 localStorage.setItem('token', res.data.token);
@@ -108,4 +108,4 @@ img {
 }
 `;
 
-export default Login;
+export default LoginAsWorker;
