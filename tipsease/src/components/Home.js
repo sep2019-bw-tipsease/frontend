@@ -18,7 +18,7 @@ const Home = () => {
        }
 
        p {
-        font-style: italic
+        font-style: italic;
         margin: 0;
        }
 
@@ -35,14 +35,15 @@ const Home = () => {
 
     return (
         <HomeCont>
-           
-            <img src={logo} alt='logo'/>
+
+            <img src={logo} alt='logo' />
 
             <p>Returning user? click here to log in</p>
-            <Link to='/login'><Button>Log in</Button></Link>
+            <Link to='/login'><Button>Log in as customer</Button></Link>
+            <Link to='/loginworker'><Button>Log in as worker</Button></Link>
             <p>New user? click here to register</p>
-            <Link to='/register'><Button>Register</Button></Link>
-           
+            <Link to='/register'><Button>Register as customer</Button></Link>
+            <Link to='/workerreg'><Button>Register as worker</Button></Link>
         </HomeCont>
     )
 }
