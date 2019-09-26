@@ -1,4 +1,5 @@
-import { axiosWithAuth } from '../utils/axiosWithAuth';
+
+import { axiosWithAuth } from '../utils/axiosWithAuth'
 
 export const LOADING = 'LOADING';
 export const SUCCESS = 'SUCCESS';
