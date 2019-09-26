@@ -53,6 +53,7 @@ const StyledDash = styled.div`
         color: #6E588A;
     }
     .server-wrap {
+
         width: 100%;
         display: flex;
         flex-wrap: wrap;
