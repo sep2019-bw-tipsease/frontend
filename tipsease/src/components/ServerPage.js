@@ -37,9 +37,9 @@ const ServerPage = props => {
       <img src={logo} alt='tipseaselogo' />
       <div className='worker-wrap'>
         <h4>{workers.first_name} {workers.last_name}</h4>
-        <p>username: {workers.username}</p>
-        <p>company: {workers.company}</p>
-        <p>catchphrase: {workers.tagline}</p>
+        <p>username: <br></br>{workers.username}</p>
+        <p>company:  <br></br>{workers.company}</p>
+        <p>catchphrase:  <br></br>{workers.tagline}</p>
         <form onSubmit={addTip}>
           <label>add a tip</label><br></br>
           $ <input type='number' name='tip' placeholder='00.00' value={tip.tip} onChange={handleChange} /><br></br>
@@ -63,7 +63,7 @@ export default connect(
 )(ServerPage);
 
 const StyledServer = styled.div`
-    height: 100vh;
+    /* height: 100vh; */
     display:flex;
     flex-direction: column;
     align-items: center;
@@ -71,7 +71,7 @@ const StyledServer = styled.div`
       width: 25rem;
     }
     .worker-wrap {
-      /* border: 1px solid red; */
+     
       border-radius: 10px;
       color: #EAE7ED;
       background: #B793E6;
@@ -81,8 +81,9 @@ const StyledServer = styled.div`
         text-align: center;
           input {
             text-align: right;
-            border-radius: 10px;
+            border-radius: 5px;
             border-style: none;
+            padding-right:1rem;
           }
 
           .button-cont {

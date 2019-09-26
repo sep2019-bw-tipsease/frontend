@@ -26,13 +26,10 @@ export default class Navigation extends React.Component {
             <NavLink href="#" onClick={toMarketing}>Tipsease</NavLink>
           </NavItem>
           <NavItem>
+            <NavLink href="/" onClick={signOut}>Home</NavLink>
+          </NavItem>
+          <NavItem>
             <NavLink href="/dashboard" >Dashboard</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink href="/">Register/login</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink href="/" onClick={signOut}>Sign Out</NavLink>
           </NavItem>
         </Nav>
       </div>
