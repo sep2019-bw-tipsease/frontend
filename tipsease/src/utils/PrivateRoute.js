@@ -3,7 +3,7 @@ import { Route, Redirect } from "react-router-dom";
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
 
-    // const Component = props.component
+
     return (
         <Route
             {...rest}
@@ -17,15 +17,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
             }}
         />
     );
-    // if (localStorage.getItem("token")) {
-    //     return (
-    //         <Route
-    //             // exact path="/:id"
-    //             render={props => <Component {...props} />} />
-    //     )
-    // } else {
-    //     return <Redirect to="/login" />;
-    // }
+
 };
 
 export default PrivateRoute;
