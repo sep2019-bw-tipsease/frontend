@@ -22,7 +22,7 @@ function App() {
       <Route path="/login" component={Login} />
       <Route path="/loginworker" component={LoginAsWorker} />
       <Route path='/workerreg' component={RegisterAsWorker} />
-      <PrivateRoute exact path='/workerdashboard' component={WorkerDashboard} />
+      <PrivateRoute path='/workerdashboard/:id' component={WorkerDashboard} />
       <PrivateRoute exact path='/dashboard' component={Dashboard} />
       <PrivateRoute path='/dashboard/:id' component={ServerPage} />
     </div>
