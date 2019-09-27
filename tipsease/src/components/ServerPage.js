@@ -25,6 +25,7 @@ const ServerPage = props => {
     setEditTip({
       ...editTip,
       [e.target.name]: Number.parseInt(e.target.value)
+
     })
 
     console.log(editTip, 'updated tip')
@@ -39,11 +40,11 @@ const ServerPage = props => {
       .then(res => {
         console.log(res)
         getOneWorker(id)
+        alert('you have successfully added a tip')
       })
 
       .catch(err => console.log(err, 'error on post tip'))
 
-    // alert()
   }
   return (
     <StyledServer>
@@ -55,12 +56,10 @@ const ServerPage = props => {
         <p>username: <br></br>{workers.username}</p>
         <p>company:  <br></br>{workers.company}</p>
         <p>catchphrase:  <br></br>{workers.tagline}</p>
-        <p>total tips: {workers.tip_total}</p>
         <form onSubmit={addTip}>
           <label>add a tip</label><br></br>
-          $ <input type='text' name='tip' value={editTip.tip} onChange={handleChange} selected='selected' /><br></br>
+          $ <input type='number' min='0' name='tip' value={editTip.tip} onChange={handleChange} selected='selected' /><br></br>
           <div className='button-cont'><Button>Add</Button></div>
-
         </form>
       </div>
     </StyledServer>

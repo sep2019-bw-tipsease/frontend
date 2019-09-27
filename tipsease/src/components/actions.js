@@ -29,16 +29,6 @@ export const getOneWorker = id => dispatch => {
         .catch(err => console.log(err, 'error on id server'))
 }
 
-// export const addTipToServer = id => dispatch => {
-//     axiosWithAuth()
-//         .put(`/workers/${id}/tips`)
-//         .then(res => {
-//             console.log(res)
-//             dispatch({ type: SUCCESS, payload: res.data })
-//         })
-//         .catch(err => console.log(err, 'error on adding tip to server'))
-// }
-
 
 export const signOut = e => {
     // console.log(e, 'signing out')
