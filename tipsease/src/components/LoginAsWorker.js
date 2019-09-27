@@ -24,19 +24,19 @@ const LoginAsWorker = props => {
             ...credentials,
             [e.target.name]: e.target.value
         })
-        // console.log(credentials)
+        console.log(credentials)
     }
 
     const userLogin = e => {
         e.preventDefault();
-        // console.log(credentials)
+        console.log(credentials)
         // e.persist();
         axios
             .post('https://tipsease-app.herokuapp.com/api/users/workerlogin', credentials)
             .then(res => {
-                // console.log(res)
+                console.log("I am a response!", res)
                 localStorage.setItem('token', res.data.token);
-                props.history.push('/workerdashboard')
+                props.history.push(`/workerdashboard/${res.data.worker.id}`)
             })
             .catch(err => console.log(err, 'error on login'))
     }
